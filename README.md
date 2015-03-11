@@ -15,7 +15,7 @@ math extension such as BC Math and GMP.
 ## Composer
 
 ```bash
-composer.phar require "joshuaestes/math:~0.1"
+composer.phar require "joshuaestes/math:~0.2@dev"
 ```
 
 # Usage
@@ -37,14 +37,29 @@ This project currently supports only a few extensions.
 
 Use the GNU Multiple Precision PHP extension.
 
+```php
+$math = new \Math\Math(new \Math\Extension\GmpExtension());
+```
+
 ## BC Math Extension
 
 Uses the BC Math PHP extension.
 
+```php
+$math = new \Math\Math(new \Math\Extension\BcMathExtension());
+```
+
 ## Auto Select Extension
 
 This extension selects the best possible extension based on your current server
-configuration.
+configuration. It includes all the extensions, if you know what your system
+uses, it's advisable to just use that extension.
+
+# Roll Your Own Extension
+
+All extensions implement the [ExtensionInterface]. You are free to use implement
+this interface to create your own unique extension. Feel free to contribute back
+by checking out [CONTRIBUTING.md].
 
 # How to contribute?
 
@@ -78,3 +93,4 @@ DEALINGS IN THE SOFTWARE.
 
 [CONTRIBUTING.md]: https://github.com/JoshuaEstes/Math/blob/master/CONTRIBUTING.md
 [CHANGELOG.md]: https://github.com/JoshuaEstes/Math/blob/master/CHANGELOG.md
+[ExtensionInterface]: https://github.com/JoshuaEstes/Math/blob/master/src/Math/Extension/ExtensionInterface.php
