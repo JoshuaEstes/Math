@@ -21,8 +21,8 @@
         "mockery/mockery": "0.9.3"
     },
     "suggest": {
-        "ext-gmp": "",
-        "ext-bcmath": ""
+        "ext-gmp": "*",
+        "ext-bcmath": "*"
     },
     "config": {
         "bin-dir": "bin"
